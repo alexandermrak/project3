@@ -2,7 +2,10 @@ import { useState } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import AuthPage from '../AuthPage/AuthPage';
-import NewOrderPage from '../NewOrderPage/NewOrderPage';
+import NewTripPage from '../NewTripPage/NewTripPage';
+import EditTripPage from '../EditTripPage/EditTripPage';
+import TripDetailPage from '../TripDetailPage/TripDetailPage';
+import TripListPage from '../TripListPage/TripListPage';
 import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
 import NavBar from '../../components/NavBar/NavBar';
 
@@ -17,8 +20,8 @@ export default function App() {
 				<>
 					<NavBar user={user} setUser={setUser} />
 					<Switch>
-						<Route path='/orders/new'>
-							<NewOrderPage />
+						<Route path='/lists/new'>
+							<NewTripPage />
 						</Route>
 						<Route path='/orders'>
 							<OrderHistoryPage />
