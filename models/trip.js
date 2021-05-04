@@ -8,4 +8,4 @@ const tripSchema = new Schema({
     notes: { type: String },
 });
 
-module.exports = mongose.model('Trip', tripSchema);
+module.exports = mongoose.model('Trip', tripSchema);
