@@ -2,7 +2,7 @@ const Trip = require('../../models/trip');
 
 module.exports = {
     index,
-    // create,
+    create,
     // show,
     // update,
     // delete: deleteOne
@@ -13,10 +13,10 @@ async function index(req, res) {
     res.status(200).json(trips);
 }
 
-// async function create(req, res) {
-// 	const trip = await Trip.create(req.body);
-// 	res.status(201).json(trip);
-// }
+async function create(req, res) {
+	const trip = await Trip.create(req.body);
+	res.status(201).json(trip);
+}
 
 // async function show(req, res) {
 // 	const trip = await Trip.findById(req.params.id);

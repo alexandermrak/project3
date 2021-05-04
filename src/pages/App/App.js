@@ -30,19 +30,23 @@ export default function App() {
     getTrips();
   }, []);
 
+  async function handleAddTrip(newTripData) {
+		const newTrip = await tripAPI.create(newTripData);
+		setTrips([...trips, newTrip]);
+	}
+
   return (
     <main className="App">
       {user ? (
         <>
-          {/* <NavBar user={user} setUser={setUser} /> */}
+          <NavBar user={user} setUser={setUser} />
           <Switch>
             <Route exact path="/trips/new">
-              <NewTripPage />
+              <NewTripPage handleAddTrip={handleAddTrip} />
             </Route>
-            <Route exact path="/trips">
+            <Route exact path="/">
               <TripListPage trips={trips} />
             </Route>
-            <Redirect to="/trips" />
           </Switch>
         </>
       ) : (

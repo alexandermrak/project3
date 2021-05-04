@@ -5,7 +5,7 @@ function TripListItem({trip}) {
   return (
     <div>
       <div>
-        <h3>{trip.name}</h3>
+        <h3>{trip.location}</h3>
       </div>
       <div>
         <Link
@@ -16,6 +16,7 @@ function TripListItem({trip}) {
         >
           DETAILS
         </Link>
+        &nbsp; | &nbsp;
         <Link
           to={{
             pathname: '/edit',
