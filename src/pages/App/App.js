@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Redirect, Route, Switch, useHistory } from "react-router-dom";
+import { Route, Switch, useHistory } from "react-router-dom";
 import { getUser } from "../../utilities/users-service";
 import AuthPage from "../AuthPage/AuthPage";
 import * as tripAPI from "../../utilities/trips-api";
@@ -17,8 +17,6 @@ export default function App() {
   const history = useHistory();
 
   useEffect(() => {
-    // This is listening for each time puppies state is changed,
-    // then will run our function below to reroute
     history.push("/");
   }, [trips, history]);
 
@@ -35,21 +33,33 @@ export default function App() {
 		setTrips([...trips, newTrip]);
 	}
 
+  async function handleUpdateTrip(updatedTripData) {
+		const updatedTrip = await tripAPI.update(updatedTripData);
+
+		const newTripsArray = trips.map(trip => {
+			return trip._id === updatedTrip._id ? updatedTrip : trip;
+		});
+		setTrips(newTripsArray);
+	}
+
   return (
     <main className="App">
       {user ? (
         <>
           <NavBar user={user} setUser={setUser} />
           <Switch>
+            <Route exact path="/">
+              <TripListPage trips={trips} /*user={user}*/ />
+            </Route>
             <Route exact path="/new">
               <NewTripPage handleAddTrip={handleAddTrip} />
-            </Route>
-            <Route exact path="/">
-              <TripListPage trips={trips} />
             </Route>
             <Route exact path='/details'>
               <TripDetailPage />
             </Route>
+            <Route exact path='/edit'>
+					    <EditTripPage handleUpdateTrip={handleUpdateTrip} />
+				    </Route>
           </Switch>
         </>
       ) : (

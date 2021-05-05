@@ -22,9 +22,6 @@ app.use(express.static(path.join(__dirname, 'build')));
 // Be sure to mount before our routes
 app.use(require('./config/checkToken'));
 
-app.use('/api/users', require('./routes/api/users'));
-const ensureLoggedIn = require('./config/ensureLoggedIn');
-app.use('/api/trips', tripsRouter);
 
 // Configure to use port 3001 instead of 3000 during development to avoid collision with React's dev server
 const port = process.env.PORT || 3001;
@@ -34,6 +31,9 @@ app.listen(port, function () {
 
 //api routes will go here
 // app.use('/api/users', require('./routes/api/users'))
+app.use('/api/users', require('./routes/api/users'));
+const ensureLoggedIn = require('./config/ensureLoggedIn');
+app.use('/api/trips', tripsRouter);
 
 // The following "catch all" route (note the *) is necessary
 app.get('/*', function (req, res) {
