@@ -7,7 +7,7 @@ import NewTripPage from "../NewTripPage/NewTripPage";
 import EditTripPage from "../EditTripPage/EditTripPage";
 import TripDetailPage from "../TripDetailPage/TripDetailPage";
 import TripListPage from "../TripListPage/TripListPage";
-import NavBar from "../../components/NavBar/NavBar";
+import NavBar from "../../Components/NavBar/NavBar";
 
 import "./App.css";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import TripCard from "../../components/TripCard/TripCard";
+import TripCard from "../../Components/TripCard/TripCard";
 import { useLocation } from "react-router-dom";
 
 function TripDetailPage(props) {

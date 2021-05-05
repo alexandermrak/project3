@@ -1,5 +1,5 @@
 import React from "react";
-import TripListItem from "../../components/TripListItem/TripListItem";
+import TripListItem from "../../Components/TripListItem/TripListItem";
 
 function TripListPage(props) {
   console.log(props);
