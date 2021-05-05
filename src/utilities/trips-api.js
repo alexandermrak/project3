@@ -25,8 +25,8 @@ export function update(trip) {
   }).then((res) => res.json());
 }
 
-// export function deleteOne(id) {
-// 	return fetch(`${BASE_URL}/${id}`, {
-// 		method: 'DELETE',
-// 	}).then(res => res.json());
-// }
+export function deleteOne(id) {
+	return fetch(`${BASE_URL}/${id}`, {
+		method: 'DELETE',
+	}).then(res => res.json());
+}

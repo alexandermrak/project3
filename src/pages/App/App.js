@@ -29,18 +29,23 @@ export default function App() {
   }, []);
 
   async function handleAddTrip(newTripData) {
-		const newTrip = await tripAPI.create(newTripData);
-		setTrips([...trips, newTrip]);
-	}
+    const newTrip = await tripAPI.create(newTripData);
+    setTrips([...trips, newTrip]);
+  }
 
   async function handleUpdateTrip(updatedTripData) {
-		const updatedTrip = await tripAPI.update(updatedTripData);
+    const updatedTrip = await tripAPI.update(updatedTripData);
 
-		const newTripsArray = trips.map(trip => {
-			return trip._id === updatedTrip._id ? updatedTrip : trip;
-		});
-		setTrips(newTripsArray);
-	}
+    const newTripsArray = trips.map((trip) => {
+      return trip._id === updatedTrip._id ? updatedTrip : trip;
+    });
+    setTrips(newTripsArray);
+  }
+
+  async function handleDeleteTrip(id) {
+    await tripAPI.deleteOne(id);
+    setTrips(trips.filter((trip) => trip._id !== id));
+  }
 
   return (
     <main className="App">
@@ -49,17 +54,17 @@ export default function App() {
           <NavBar user={user} setUser={setUser} />
           <Switch>
             <Route exact path="/">
-              <TripListPage trips={trips} /*user={user}*/ />
+              <TripListPage trips={trips} handleDeleteTrip={handleDeleteTrip}/*user={user}*/ />
             </Route>
             <Route exact path="/new">
               <NewTripPage handleAddTrip={handleAddTrip} />
             </Route>
-            <Route exact path='/details'>
+            <Route exact path="/details">
               <TripDetailPage />
             </Route>
-            <Route exact path='/edit'>
-					    <EditTripPage handleUpdateTrip={handleUpdateTrip} />
-				    </Route>
+            <Route exact path="/edit">
+              <EditTripPage handleUpdateTrip={handleUpdateTrip} />
+            </Route>
           </Switch>
         </>
       ) : (

@@ -9,7 +9,7 @@ function TripListPage(props) {
       <div>
         {props.trips.map((trip) => (
           /*{user = trip.user ? (*/
-          <TripListItem trip={trip} key={trip._id} />
+          <TripListItem trip={trip} key={trip._id} handleDeleteTrip={props.handleDeleteTrip} />
           /*) : (
             <h1></h1>
           )}*/

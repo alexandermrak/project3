@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-function TripListItem({trip}) { 
+function TripListItem({trip, handleDeleteTrip}) { 
   return (
     <div>
       <div>
@@ -25,7 +25,9 @@ function TripListItem({trip}) {
         >
           EDIT
         </Link>
-        <button>
+        <button className='btn btn-xs btn-danger margin-left-10'
+					onClick={() => handleDeleteTrip(trip._id)}
+				>
           DELETE
         </button>
       </div>

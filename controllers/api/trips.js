@@ -5,7 +5,7 @@ module.exports = {
     create,
     show,
     update,
-    // delete: deleteOne
+    delete: deleteOne
 }
 
 async function index(req, res) {
@@ -33,7 +33,7 @@ async function update(req, res) {
 	res.status(200).json(updatedTrip);
 }
 
-// async function deleteOne(req, res) {
-// 	const deletedTrip = await Trip.findByIdAndDelete(req.params.id);
-// 	res.status(200).json(deletedTrip);
-// }
+async function deleteOne(req, res) {
+	const deletedTrip = await Trip.findByIdAndDelete(req.params.id);
+	res.status(200).json(deletedTrip);
+}
