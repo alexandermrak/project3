@@ -1,13 +1,18 @@
-import React from 'react';
+import React from "react";
+import TripCard from "../../components/TripCard/TripCard";
+import { useLocation } from "react-router-dom";
 
-function TripDetailPage(props){
+function TripDetailPage(props) {
+  const {
+    state: { trip },
+  } = useLocation();
 
-    return(
-        <>
-          <h1>Trip Details</h1>
-        </>
-    );
-
+  return (
+    <>
+      <h1>Trip Details</h1>
+      <TripCard key={trip._id} trip={trip} />
+    </>
+  );
 }
 
 export default TripDetailPage;

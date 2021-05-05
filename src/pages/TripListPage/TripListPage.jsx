@@ -2,7 +2,7 @@ import React from "react";
 import TripListItem from "../../components/TripListItem/TripListItem";
 
 function TripListPage(props) {
-  console.log('test');
+  console.log(props);
   return (
     <>
       <h1>Trip List</h1>

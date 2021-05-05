@@ -41,11 +41,14 @@ export default function App() {
         <>
           <NavBar user={user} setUser={setUser} />
           <Switch>
-            <Route exact path="/trips/new">
+            <Route exact path="/new">
               <NewTripPage handleAddTrip={handleAddTrip} />
             </Route>
             <Route exact path="/">
               <TripListPage trips={trips} />
+            </Route>
+            <Route exact path='/details'>
+              <TripDetailPage />
             </Route>
           </Switch>
         </>
