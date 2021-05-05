@@ -54,7 +54,7 @@ export default function App() {
           <NavBar user={user} setUser={setUser} />
           <Switch>
             <Route exact path="/">
-              <TripListPage trips={trips} handleDeleteTrip={handleDeleteTrip}/*user={user}*/ />
+              <TripListPage trips={trips} handleDeleteTrip={handleDeleteTrip} user={user} />
             </Route>
             <Route exact path="/new">
               <NewTripPage handleAddTrip={handleAddTrip} />

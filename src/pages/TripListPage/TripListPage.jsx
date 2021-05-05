@@ -8,11 +8,11 @@ function TripListPage(props) {
       <h1>Trip List</h1>
       <div>
         {props.trips.map((trip) => (
-          /*{user = trip.user ? (*/
+          props.user._id === trip.user ? (
           <TripListItem trip={trip} key={trip._id} handleDeleteTrip={props.handleDeleteTrip} />
-          /*) : (
+          ) : (
             <h1></h1>
-          )}*/
+          )
         ))}
       </div>
     </>
