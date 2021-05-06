@@ -20,14 +20,6 @@ export default function App() {
     history.push("/");
   }, [trips, history]);
 
-  useEffect(() => {
-    async function getTrips() {
-      const trips = await tripAPI.getAll();
-      setTrips(trips);
-    }
-    getTrips();
-  }, []);
-
   async function handleAddTrip(newTripData) {
     const newTrip = await tripAPI.create(newTripData);
     setTrips([...trips, newTrip]);
@@ -47,6 +39,7 @@ export default function App() {
     setTrips(trips.filter((trip) => trip._id !== id));
   }
 
+
   return (
     <main className="App">
       {user ? (
@@ -54,7 +47,7 @@ export default function App() {
           <NavBar user={user} setUser={setUser} />
           <Switch>
             <Route exact path="/">
-              <TripListPage trips={trips} handleDeleteTrip={handleDeleteTrip} user={user} />
+              <TripListPage trips={trips} handleDeleteTrip={handleDeleteTrip} user={user} setTrips={setTrips} />
             </Route>
             <Route exact path="/new">
               <NewTripPage handleAddTrip={handleAddTrip} />

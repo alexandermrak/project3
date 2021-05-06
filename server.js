@@ -33,7 +33,7 @@ app.listen(port, function () {
 // app.use('/api/users', require('./routes/api/users'))
 app.use('/api/users', require('./routes/api/users'));
 const ensureLoggedIn = require('./config/ensureLoggedIn');
-app.use('/api/trips', tripsRouter);
+app.use('/api/trips', ensureLoggedIn, tripsRouter);
 
 // The following "catch all" route (note the *) is necessary
 app.get('/*', function (req, res) {

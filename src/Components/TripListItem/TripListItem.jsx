@@ -3,9 +3,9 @@ import {Link} from 'react-router-dom';
 
 function TripListItem({trip, handleDeleteTrip}) { 
   return (
-    <div>
+    <div className="trip-list-item">
       <div>
-        <h3>{trip.location}</h3>
+        <h2>{trip.location}</h2>
       </div>
       <div>
         <Link

@@ -1,0 +1,10 @@
+.navbar {
+    background-color: #191970;
+    justify-content: space-around;
+    height: 50px;
+    margin-bottom: 0px;
+}
+
+.link {
+    color: aliceblue;
+}
