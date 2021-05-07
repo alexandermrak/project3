@@ -1,7 +1,7 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-function TripListItem({trip, handleDeleteTrip}) { 
+function TripListItem({ trip, handleDeleteTrip }) {
   return (
     <div className="trip-list-item">
       <div>
@@ -10,8 +10,8 @@ function TripListItem({trip, handleDeleteTrip}) {
       <div>
         <Link
           to={{
-            pathname: '/details',
-            state: {trip}
+            pathname: "/details",
+            state: { trip },
           }}
         >
           DETAILS
@@ -19,15 +19,16 @@ function TripListItem({trip, handleDeleteTrip}) {
         &nbsp; | &nbsp;
         <Link
           to={{
-            pathname: '/edit',
-            state: {trip}
+            pathname: "/edit",
+            state: { trip },
           }}
         >
           EDIT
         </Link>
-        <button className='btn btn-xs btn-primary margin-left-10'
-					onClick={() => handleDeleteTrip(trip._id)}
-				>
+        <button
+          className="btn btn-xs btn-primary margin-left-10"
+          onClick={() => handleDeleteTrip(trip._id)}
+        >
           DELETE
         </button>
       </div>

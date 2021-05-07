@@ -1,14 +1,14 @@
 import { useState } from "react";
 import SignUpForm from "../../Components/SignUpForm/SignUpForm";
 import LoginForm from "../../Components/LoginForm/LoginForm";
-import './AuthPage.css';
+import "./AuthPage.css";
 
 export default function AuthPage({ setUser }) {
   const [showLogin, setShowLogin] = useState(true);
 
   return (
     <main className="auth">
-		<h1>Log in or Sign Up to Make a Trip Plan</h1>
+      <h1>Log in or Sign Up to Make a Trip Plan</h1>
       {showLogin ? (
         <LoginForm setUser={setUser} />
       ) : (

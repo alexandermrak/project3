@@ -15,13 +15,17 @@ function TripListPage(props) {
     <>
       <h1>My Trip Plans</h1>
       <div>
-        {props.trips.map((trip) => (
+        {props.trips.map((trip) =>
           props.user._id === trip.user ? (
-          <TripListItem trip={trip} key={trip._id} handleDeleteTrip={props.handleDeleteTrip} />
+            <TripListItem
+              trip={trip}
+              key={trip._id}
+              handleDeleteTrip={props.handleDeleteTrip}
+            />
           ) : (
             <h1></h1>
           )
-        ))}
+        )}
       </div>
     </>
   );

@@ -6,7 +6,7 @@ export function getAll() {
   return fetch(BASE_URL, {
     headers: {
       "content-type": "application/json",
-      "Authorization": `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
     },
   }).then((res) => res.json());
 }
@@ -17,7 +17,7 @@ export function create(trip) {
     method: "POST",
     headers: {
       "content-type": "application/json",
-      "Authorization": `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(trip),
   }).then((res) => res.json());
@@ -29,7 +29,7 @@ export function update(trip) {
     method: "PUT",
     headers: {
       "content-type": "application/json",
-      "Authorization": `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify(trip),
   }).then((res) => res.json());
@@ -37,11 +37,11 @@ export function update(trip) {
 
 export function deleteOne(id) {
   const token = getToken();
-	return fetch(`${BASE_URL}/${id}`, {
-		method: 'DELETE',
+  return fetch(`${BASE_URL}/${id}`, {
+    method: "DELETE",
     headers: {
       "content-type": "application/json",
-      "Authorization": `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
     },
-	}).then(res => res.json());
+  }).then((res) => res.json());
 }

@@ -30,48 +30,53 @@ export default function NewTripPage(props) {
   return (
     <>
       <h1>New Trip</h1>
-      <form autoComplete='off' ref={formRef} onSubmit={handleSubmit} className="edit">
-        <div className='form-group'>
+      <form
+        autoComplete="off"
+        ref={formRef}
+        onSubmit={handleSubmit}
+        className="edit"
+      >
+        <div className="form-group">
           <label>Trip Location:</label>
-          <input 
-            className='form-control'
-            name='location'
+          <input
+            className="form-control"
+            name="location"
             value={formData.location}
             onChange={handleChange}
             required
           />
         </div>
-        <div className='form-group'>
+        <div className="form-group">
           <label>Trip Date:</label>
-          <input 
-            className='form-control'
-            name='date'
+          <input
+            className="form-control"
+            name="date"
             value={formData.date}
             onChange={handleChange}
           />
         </div>
-        <div className='form-group'>
+        <div className="form-group">
           <label>Trip Duration:</label>
-          <input 
-            className='form-control'
-            name='duration'
+          <input
+            className="form-control"
+            name="duration"
             value={formData.duration}
             onChange={handleChange}
             required
           />
         </div>
-        <div className='form-group'>
+        <div className="form-group">
           <label>Notes/Goals for Trip:</label>
-          <input 
-            className='form-control'
-            name='notes'
+          <input
+            className="form-control"
+            name="notes"
             value={formData.notes}
             onChange={handleChange}
           />
         </div>
-        <button type='submit' className='btn' disabled={invalidForm}>
-					ADD TRIP
-				</button>
+        <button type="submit" className="btn" disabled={invalidForm}>
+          ADD TRIP
+        </button>
       </form>
     </>
   );

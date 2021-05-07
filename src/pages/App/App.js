@@ -39,7 +39,6 @@ export default function App() {
     setTrips(trips.filter((trip) => trip._id !== id));
   }
 
-
   return (
     <main className="App">
       {user ? (
@@ -47,7 +46,12 @@ export default function App() {
           <NavBar user={user} setUser={setUser} />
           <Switch>
             <Route exact path="/">
-              <TripListPage trips={trips} handleDeleteTrip={handleDeleteTrip} user={user} setTrips={setTrips} />
+              <TripListPage
+                trips={trips}
+                handleDeleteTrip={handleDeleteTrip}
+                user={user}
+                setTrips={setTrips}
+              />
             </Route>
             <Route exact path="/new">
               <NewTripPage handleAddTrip={handleAddTrip} />
