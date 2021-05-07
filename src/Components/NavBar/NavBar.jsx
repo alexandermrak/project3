@@ -13,7 +13,7 @@ export default function NavBar({ user, setUser }) {
 	}
 
 	return (
-		<nav className="navbar">
+		<nav className="navbar navbar bg-dark">
 			<Link className="link" to='/'>All Trips</Link>
 			&nbsp; | &nbsp;
 			<Link className="link" to='/new'>New Trip</Link>

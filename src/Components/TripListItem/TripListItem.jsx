@@ -25,7 +25,7 @@ function TripListItem({trip, handleDeleteTrip}) {
         >
           EDIT
         </Link>
-        <button className='btn btn-xs btn-danger margin-left-10'
+        <button className='btn btn-xs btn-primary margin-left-10'
 					onClick={() => handleDeleteTrip(trip._id)}
 				>
           DELETE

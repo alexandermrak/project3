@@ -30,7 +30,7 @@ export default function NewTripPage(props) {
   return (
     <>
       <h1>New Trip</h1>
-      <form autoComplete='off' ref={formRef} onSubmit={handleSubmit}>
+      <form autoComplete='off' ref={formRef} onSubmit={handleSubmit} className="edit">
         <div className='form-group'>
           <label>Trip Location:</label>
           <input 

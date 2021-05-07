@@ -30,7 +30,7 @@ export default function EditTripPage(props) {
 	return (
 		<>
 			<h1>Edit Trip</h1>
-      <form ref={formRef} autoComplete='off' onSubmit={handleSubmit}>
+      <form ref={formRef} autoComplete='off' onSubmit={handleSubmit} className="edit" >
         <div className='form-group'>
           <label>Trip Location:</label>
           <input 
@@ -40,6 +40,7 @@ export default function EditTripPage(props) {
             onChange={handleChange}
           />
         </div>
+        <br />
         <div className='form-group'>
           <label>Trip Date:</label>
           <input 
@@ -49,6 +50,7 @@ export default function EditTripPage(props) {
             onChange={handleChange}
           />
         </div>
+        <br />
         <div className='form-group'>
           <label>Trip Duration:</label>
           <input 
@@ -58,6 +60,7 @@ export default function EditTripPage(props) {
             onChange={handleChange}
           />
         </div>
+        <br />
         <div className='form-group'>
           <label>Notes/Goals for Trip:</label>
           <input 
@@ -67,6 +70,7 @@ export default function EditTripPage(props) {
             onChange={handleChange}
           />
         </div>
+        <br />
         <button type='submit' className='btn' disabled={invalidForm}>
 					UPDATE TRIP
 				</button>
