@@ -1,8 +1,18 @@
 # Trip Planner
 Want to plan a vacation but don't know the exact date? Say you want to go to Europe but you only know a general time you will visit, like late 2021. The Trip Planner is just the app for you! With this app you can sign up/log in and create trip plans which can specify the location, general date, length of stay, and any notes/activites you want to do. 
 
+# Images of the app
+Log In Page:
+<img src="public/images/login.jpeg">
+
+Home Page:
+<img src="public/images/triplist.jpeg'>
+
+Create New Trip Page:
+<img src="public/images/newtrip.jpeg">
+
 # Technologies Used
-HTML, CSS, JavaScript, MongoDB, Mongoose, Express, React, & Node
+HTML, CSS, Bootstrap, JavaScript, MongoDB, Mongoose, Express, React, Node
 
 # Use The App Here:
 https://seir-project-3.herokuapp.com/
