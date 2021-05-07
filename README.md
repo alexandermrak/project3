@@ -6,7 +6,7 @@ Log In Page:
 <img src="public/images/login.jpeg">
 
 Home Page:
-<img src="public/images/triplist.jpeg'>
+<img src="public/images/triplist.jpeg">
 
 Create New Trip Page:
 <img src="public/images/newtrip.jpeg">
